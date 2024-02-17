@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+//*** グローバル変数 ***//
+$mainColor: #333333;  // 文字色
+
+//*** mixin ***//
+@mixin flexMode($justify) { // displayFlex
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+}
+@mixin hoverOpacity { // hover時のopacity
+    & {
+        transition: all 0.5s;
+    }
+    &:hover {
+        opacity: 0.6;
+    }
+}
+
+*    { box-sizing: border-box; }
+html { font-size: 100%; }
+li   { list-style: none; }
+a    { text-decoration: none; color: $mainColor;}
+body { font-family: "Meiryo"; color: $mainColor; }
+img  { max-width: 100%; vertical-align: bottom; }
+/*
+横幅を設定するための共通クラス
+*/
+.wrapper {
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+
+/* /ここまで共通設定 */
+/*-------------------------------------------
+#header
+-------------------------------------------*/
+#header {
+    @include flexMode(space-between);
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    left: 0;
+    right: 0;    
+    z-index: 10;
+    margin-bottom: 80px;
+    background-color: #fff;
+    .header-title {
+        @include hoverOpacity;
+        width: 180px;
+        line-height: 1px;
+        a {
+            display: block;
+        }
+        img {
+            max-width: 100%;
+            vertical-align: bottom;
+        }
+    }
+    nav {
+        display: none;
+    }
+}
+/*-------------------------------------------
+main
+-------------------------------------------*/
+// mixinでまとめる予定
+#mainMainProduct {
+    background-color: tomato;
+    width: 100%;
+    padding-top: 100px;
+}
+
+#mainProductTitle {
+    background-color: tomato;   
+    width: 100%;
+    padding: 100px 40px 0;
+}
+
+#mainAboutCompany {
+    background-color: tomato;
+    width: 50%;
+    padding-top: 100px;
+}
+
+/*-------------------------------------------
+#footer
+-------------------------------------------*/
+#footer {
+    background-color: pink;
+    @include flexMode(space-between);
+    font-size: 0.75rem;
+    padding: 20px 40px;
+    nav ul {
+        @include flexMode(space-between);
+        li {
+            margin-right: 30px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }        
+    }
+    p {
+        font-size: 0.625rem;
+    }
+}
+
+/* レスポンシブ・ブレークポイント900px
+------------------------------- */
