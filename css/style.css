@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* 共通クラス */
 * {
   box-sizing: border-box;
 }
@@ -16,19 +17,26 @@ a {
   color: #333333;
 }
 
-body {
-  font-family: "Meiryo";
-  color: #333333;
-}
-
 img {
   max-width: 100%;
   vertical-align: bottom;
 }
 
-/*
-横幅を設定するための共通クラス
-*/
+body {
+  font-family: "Meiryo";
+  color: #333333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h2 {
+  font: normal 0.875rem "Meiryo";
+  margin: 40px 0 30px;
+}
+
+/* 横幅を設定するための共通クラス */
 .wrapper {
   width: 100%;
   max-width: 1360px;
@@ -36,7 +44,6 @@ img {
   padding: 0 40px;
 }
 
-/* /ここまで共通設定 */
 /*-------------------------------------------
 #header
 -------------------------------------------*/
@@ -50,7 +57,6 @@ img {
   left: 0;
   right: 0;
   z-index: 10;
-  margin-bottom: 80px;
   background-color: #fff;
 }
 #header .header-title {
@@ -58,7 +64,7 @@ img {
   line-height: 1px;
 }
 #header .header-title {
-  transition: all 0.5s;
+  transition: opacity 0.5s;
 }
 #header .header-title:hover {
   opacity: 0.6;
@@ -78,33 +84,97 @@ img {
 main
 -------------------------------------------*/
 #mainMainProduct {
-  background-color: tomato;
   width: 100%;
-  padding-top: 100px;
+  padding-top: 80px;
+}
+#mainMainProduct .grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  margin-bottom: 25px;
+}
+#mainMainProduct .grid .item {
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+  width: 23%;
+}
+#mainMainProduct .grid .item p {
+  margin-top: 10px;
+  cursor: pointer;
+}
+#mainMainProduct .indexPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.875rem;
+  text-align: center;
+}
+#mainMainProduct .indexPage li {
+  margin: 0 20px;
+}
+#mainMainProduct .indexPage a {
+  display: block;
+}
+#mainMainProduct .indexPage a {
+  transition: opacity 0.5s;
+}
+#mainMainProduct .indexPage a:hover {
+  opacity: 0.6;
+}
+
+/* JavaScriptでclass属性を追加するメソッド */
+.item.hover-effect {
+  opacity: 0.6;
 }
 
 #mainProductTitle {
-  background-color: tomato;
-  width: 100%;
-  padding: 100px 40px 0;
+  padding: 80px 40px 0;
+}
+#mainProductTitle .item-info {
+  display: flex;
+}
+#mainProductTitle .item-info .item-img {
+  width: 400px;
+  height: 400px;
+  margin-right: 60px;
+}
+#mainProductTitle .item-text {
+  width: 340px;
+  font-size: 0.875rem;
+  text-align: justify;
+}
+#mainProductTitle .item-text p {
+  margin-bottom: 30px;
+}
+#mainProductTitle .item-text dl {
+  display: flex;
+  flex-wrap: wrap;
+}
+#mainProductTitle .item-text dl dt {
+  width: 30%;
+}
+#mainProductTitle .item-text dl dd {
+  width: 70%;
 }
 
 #mainAboutCompany {
   background-color: tomato;
   width: 50%;
-  padding-top: 100px;
+  padding-top: 80px;
 }
 
 /*-------------------------------------------
 #footer
 -------------------------------------------*/
 #footer {
-  background-color: pink;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   font-size: 0.75rem;
   padding: 20px 40px;
+  margin-top: 105px;
 }
 #footer nav ul {
   display: flex;
@@ -113,6 +183,12 @@ main
 }
 #footer nav ul li {
   margin-right: 30px;
+}
+#footer nav ul li {
+  transition: opacity 0.5s;
+}
+#footer nav ul li:hover {
+  opacity: 0.6;
 }
 #footer nav ul li:last-child {
   margin-right: 0;

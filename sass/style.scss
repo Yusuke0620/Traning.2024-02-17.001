@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
-//*** グローバル変数 ***//
+//* グローバル変数 *//
 $mainColor: #333333;  // 文字色
 
-//*** mixin ***//
+//* mixin *//
 @mixin flexMode($justify) { // displayFlex
     display: flex;
     justify-content: $justify;
@@ -11,22 +11,30 @@ $mainColor: #333333;  // 文字色
 }
 @mixin hoverOpacity { // hover時のopacity
     & {
-        transition: all 0.5s;
+        transition: opacity 0.5s;
     }
     &:hover {
         opacity: 0.6;
     }
 }
-
+/* 共通クラス */
 *    { box-sizing: border-box; }
 html { font-size: 100%; }
 li   { list-style: none; }
 a    { text-decoration: none; color: $mainColor;}
-body { font-family: "Meiryo"; color: $mainColor; }
 img  { max-width: 100%; vertical-align: bottom; }
-/*
-横幅を設定するための共通クラス
-*/
+body { 
+    font-family: "Meiryo"; 
+    color: $mainColor; 
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;}
+// font-size: 0.875rem
+// font-weight: normal
+h2 { font: normal 0.875rem "Meiryo"; margin: 40px 0 30px;}
+
+/* 横幅を設定するための共通クラス */
 .wrapper {
     width: 100%;
     max-width: 1360px;
@@ -34,8 +42,6 @@ img  { max-width: 100%; vertical-align: bottom; }
     padding: 0 40px;
 }
 
-
-/* /ここまで共通設定 */
 /*-------------------------------------------
 #header
 -------------------------------------------*/
@@ -47,7 +53,6 @@ img  { max-width: 100%; vertical-align: bottom; }
     left: 0;
     right: 0;    
     z-index: 10;
-    margin-bottom: 80px;
     background-color: #fff;
     .header-title {
         @include hoverOpacity;
@@ -70,39 +75,97 @@ main
 -------------------------------------------*/
 // mixinでまとめる予定
 #mainMainProduct {
-    background-color: tomato;
     width: 100%;
-    padding-top: 100px;
+    padding-top: 80px;
+    .grid {        
+        @include flexMode(space-between);
+        font-size: 0.75rem;
+        margin-bottom: 25px;
+        .item {
+            transition: opacity 0.6s;
+            margin-bottom: 15px;
+            width: 23%;          
+            p {
+                margin-top: 10px;
+                cursor: pointer;
+            }
+        }
+    }
+    .indexPage {
+        @include flexMode(center);
+        font-size: 0.875rem;
+        text-align: center;
+        li {
+            margin: 0 20px;
+        }
+        a {
+            @include hoverOpacity;
+            display: block;
+        }
+    }
+}
+/* JavaScriptでclass属性を追加するメソッド */
+.item.hover-effect {
+    opacity: 0.6;
 }
 
 #mainProductTitle {
-    background-color: tomato;   
-    width: 100%;
-    padding: 100px 40px 0;
+    padding: 80px 40px 0;
+    .item-info {
+        display: flex;
+        .item-img {
+            width: 400px;
+            height: 400px;
+            margin-right: 60px;
+        }        
+    }
+    // 階層が深くなるため分離
+    .item-text {
+        width: 340px;
+        font-size: 0.875rem;
+        text-align: justify;
+        p {
+            margin-bottom: 30px;
+        }
+        dl {    
+            display: flex;
+            flex-wrap: wrap;       
+           
+            dt {     
+                width: 30%;
+            }
+            dd {
+                width: 70%;
+            }
+        }
+    }
 }
+
 
 #mainAboutCompany {
     background-color: tomato;
     width: 50%;
-    padding-top: 100px;
+    padding-top: 80px;
 }
 
 /*-------------------------------------------
 #footer
 -------------------------------------------*/
 #footer {
-    background-color: pink;
     @include flexMode(space-between);
+    width: 100%;
     font-size: 0.75rem;
     padding: 20px 40px;
+    margin-top: 105px;
     nav ul {
         @include flexMode(space-between);
         li {
+            @include hoverOpacity;
             margin-right: 30px;
             &:last-child {
                 margin-right: 0;
             }
-        }        
+        }
     }
     p {
         font-size: 0.625rem;
