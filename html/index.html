@@ -11,13 +11,23 @@
         <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css"/>
     <!-- CSS -->
         <link rel="stylesheet" href="../css/style.css">
-        <script src="../script.js" defer></script>
+        <script src="../hover-effect.js" defer></script>
+        <script src="../script/hamburger_menu.js"></script>
     </head>
 
     <body>
         <header id="header" class="wrapper">
-            <h1 class="header-title"><a href="index.html"><img src="../images/logo.svg"></a></h1>
-            <nav>
+            <h1 class="header-title"><a href="index.html">
+                <img src="../images/logo.svg"></a>
+            </h1>
+
+            <!-- ハンバーガーメニュー(通常は非表示) -->
+            <div class="hamburger_menu">
+                <span></span>
+                <span></span>
+            </div>
+            <!-- ナビメニュー(通常は非表示) -->
+            <nav class="nav">
                 <ul>
                     <li><a href="#">PRODUCTS</a></li>
                     <li><a href="#">ABOUT</a></li>

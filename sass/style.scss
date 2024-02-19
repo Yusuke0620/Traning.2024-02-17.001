@@ -219,5 +219,49 @@ main
     }
 }
 
+/*-------------------------------------------
+ハンバーガーメニュー(通常は非表示)
+-------------------------------------------*/
+.drawer_hidden {
+    display: none;
+  }
+
+/* ハンバーガーメニューのアイコン */
+.hamburger_menu {    
+    display: block;
+    position: relative;
+    height: 30px; 
+    width: 30px; 
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+    span {
+        position: absolute;
+        height: 2px; /* 線の高さ */
+        width: 30px; /* 線の横幅 */
+        background-color: #333333;
+        &:nth-of-type(1) {
+            top: 10px;
+        }
+        &:nth-of-type(2) {
+            bottom: 10px;
+        }
+    }
+    &:active span:nth-of-type(1) {
+        transform: rotate(45deg);
+    }
+    &:active span:nth-of-type(2) {
+        transform: rotate(-45deg);
+    }
+
+}
+
+
+
+
+
+
+
+
+
 /* レスポンシブ・ブレークポイント900px
 ------------------------------- */

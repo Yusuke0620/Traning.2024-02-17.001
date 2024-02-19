@@ -44,6 +44,26 @@ h2 {
   padding: 0 40px;
 }
 
+.indexPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.875rem;
+  text-align: center;
+}
+.indexPage li {
+  margin: 0 20px;
+}
+.indexPage a {
+  display: block;
+}
+.indexPage a {
+  transition: opacity 0.5s;
+}
+.indexPage a:hover {
+  opacity: 0.6;
+}
+
 /*-------------------------------------------
 #header
 -------------------------------------------*/
@@ -103,25 +123,6 @@ main
   margin-top: 10px;
   cursor: pointer;
 }
-#mainMainProduct .indexPage {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.875rem;
-  text-align: center;
-}
-#mainMainProduct .indexPage li {
-  margin: 0 20px;
-}
-#mainMainProduct .indexPage a {
-  display: block;
-}
-#mainMainProduct .indexPage a {
-  transition: opacity 0.5s;
-}
-#mainMainProduct .indexPage a:hover {
-  opacity: 0.6;
-}
 
 /* JavaScriptでclass属性を追加するメソッド */
 .item.hover-effect {
@@ -133,6 +134,7 @@ main
 }
 #mainProductTitle .item-info {
   display: flex;
+  margin-bottom: 65px;
 }
 #mainProductTitle .item-info .item-img {
   width: 400px;
@@ -159,9 +161,51 @@ main
 }
 
 #mainAboutCompany {
-  background-color: tomato;
-  width: 50%;
   padding-top: 80px;
+}
+#mainAboutCompany .about {
+  max-width: 600px;
+}
+#mainAboutCompany .about p {
+  font-size: 0.875rem;
+  line-height: 27px;
+  text-align: justify;
+  margin-bottom: 40px;
+}
+#mainAboutCompany .about p:nth-of-type(2) {
+  margin-bottom: 0;
+}
+#mainAboutCompany .company {
+  max-width: 600px;
+}
+#mainAboutCompany .company dl {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-size: 0.875rem;
+}
+#mainAboutCompany .company dl dt {
+  width: 30%;
+  padding: 20px 0 20px 10px;
+  border-bottom: 1px solid #DCDBDB;
+}
+#mainAboutCompany .company dl dt:nth-of-type(6) {
+  border-bottom: 0;
+}
+#mainAboutCompany .company dl dd {
+  width: 70%;
+  padding: 20px 0;
+  border-bottom: 1px solid #DCDBDB;
+}
+#mainAboutCompany .company dl dd:nth-of-type(6) {
+  border-bottom: 0;
+}
+#mainAboutCompany .company .company-map {
+  filter: grayscale(100%);
+  margin-top: 20px;
+}
+#mainAboutCompany .company .company-map iframe {
+  width: 100%;
 }
 
 /*-------------------------------------------
@@ -195,6 +239,41 @@ main
 }
 #footer p {
   font-size: 0.625rem;
+}
+
+/*-------------------------------------------
+ハンバーガーメニュー(通常は非表示)
+-------------------------------------------*/
+.drawer_hidden {
+  display: none;
+}
+
+/* ハンバーガーメニューのアイコン */
+.hamburger_menu {
+  display: block;
+  position: relative;
+  height: 30px;
+  width: 30px;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+.hamburger_menu span {
+  position: absolute;
+  height: 2px; /* 線の高さ */
+  width: 30px; /* 線の横幅 */
+  background-color: #333333;
+}
+.hamburger_menu span:nth-of-type(1) {
+  top: 10px;
+}
+.hamburger_menu span:nth-of-type(2) {
+  bottom: 10px;
+}
+.hamburger_menu:active span:nth-of-type(1) {
+  transform: rotate(45deg);
+}
+.hamburger_menu:active span:nth-of-type(2) {
+  transform: rotate(-45deg);
 }
 
 /* レスポンシブ・ブレークポイント900px
