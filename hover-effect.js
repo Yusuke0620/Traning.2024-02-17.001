@@ -9,19 +9,22 @@ document.addEventListener('DOMContentLoaded', () => {
         // imgタグにホバーした場合、CSSのhover-effectを追加する
         item.querySelector('img').addEventListener('mouseenter', () => {
             item.classList.add('hover-effect');
+            console.log("カーソルが画像に乗りました");
         });
         // imgタグからカーソルが離れた時、CSSのhover-effectを削除する
         item.querySelector('img').addEventListener('mouseleave', () => {
             item.classList.remove('hover-effect');
+            console.log("カーソルが画像から離れました");
         });
-
         // pタグにホバーした場合、CSSのhover-effectを追加する
         item.querySelector('p').addEventListener('mouseenter', () => {
             item.classList.add('hover-effect');
+            console.log("カーソルが段落に乗りました");
         });
         // pタグからカーソルが離れた時、CSSのhover-effectを削除する
         item.querySelector('p').addEventListener('mouseleave', () => {
             item.classList.remove('hover-effect');
+            console.log("カーソルが段落から離れました");
         });
     });
 });
