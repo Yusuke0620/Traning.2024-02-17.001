@@ -242,10 +242,10 @@ main
 }
 
 /*-------------------------------------------
-ハンバーガーメニュー(通常は非表示)
+ハンバーガーメニュー
 -------------------------------------------*/
-.drawer_hidden {
-  display: none;
+.back_color {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* ハンバーガーメニューのアイコン */
@@ -254,7 +254,6 @@ main
   position: relative;
   height: 30px;
   width: 30px;
-  transition: all 0.4s ease-in-out;
   cursor: pointer;
 }
 .hamburger_menu span {
@@ -262,6 +261,7 @@ main
   height: 2px; /* 線の高さ */
   width: 30px; /* 線の横幅 */
   background-color: #333333;
+  transition: all 0.4s ease-in-out;
 }
 .hamburger_menu span:nth-of-type(1) {
   top: 10px;
@@ -270,10 +270,10 @@ main
   bottom: 10px;
 }
 .hamburger_menu:active span:nth-of-type(1) {
-  transform: rotate(45deg);
+  transform: translateY(4px) rotate(-45deg);
 }
 .hamburger_menu:active span:nth-of-type(2) {
-  transform: rotate(-45deg);
+  transform: translateY(-4px) rotate(45deg);
 }
 
 /* レスポンシブ・ブレークポイント900px
